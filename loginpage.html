@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      background-image: url('https://tse2.mm.bing.net/th?id=OIP.wXxeRcaNt-GaXhu0AaktdAHaEK&pid=Api&P=0&h=180');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    header {
+      background: #04571e;
+      color: #fff;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    nav {
+      background: #444;
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    nav a {
+      color: #fff;
+      margin: 0 1rem;
+      text-decoration: none;
+    }
+
+    .main-content {
+      flex: 1; /* Pushes footer down */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem 1rem;
+    }
+
+    .login-container {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 700px;
+      background-color: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .left-panel, .right-panel {
+      padding: 30px;
+    }
+
+    .left-panel {
+      background-color: #04571e;
+      color: white;
+      flex: 1 1 250px;
+    }
+
+    .left-panel h2 {
+      margin-top: 0;
+      font-weight: 500;
+    }
+
+    .left-panel p {
+      font-size: 14px;
+      margin-top: 20px;
+    }
+
+    .right-panel {
+      flex: 1 1 300px;
+      position: relative;
+      background-color: white;
+    }
+
+    .right-panel input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    .right-panel button {
+      width: 100%;
+      padding: 12px;
+      background-color: #fb641b;
+      color: white;
+      font-weight: bold;
+      font-size: 15px;
+      margin-top: 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .right-panel .terms {
+      font-size: 12px;
+      color: #878787;
+      margin-top: 10px;
+    }
+
+    .right-panel .signup-link {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 14px;
+    }
+
+    .right-panel .signup-link a {
+      color: #2874f0;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .login-container {
+        flex-direction: column;
+        margin: 1rem;
+      }
+
+      .left-panel, .right-panel {
+        width: 100%;
+        padding: 20px;
+      }
+    }
+
+    @media screen and (max-width: 400px) {
+      header h1 {
+        font-size: 1.5rem;
+      }
+
+      nav a {
+        display: block;
+        margin: 0.5rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>&#xf07a; FLIPKART</h1>
+  </header>    
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <div class="main-content">
+    <div class="login-container">
+      <div class="left-panel">
+        <h2>Login</h2>
+        <p>Get access to your Orders, Wishlist and Recommendations</p>
+      </div>
+      <div class="right-panel">
+        <input type="text" placeholder="Enter Email/Mobile number" />
+        <input type="password" placeholder="Enter Password" />
+        <button>Login</button>
+        <p class="terms">By continuing, you agree to Flipkart's Terms of Use and Privacy Policy.</p>
+        <div class="signup-link">
+          New to Flipkart? <a href="#">Create an account</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 My Website. All rights reserved.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-image: url('https://tse2.mm.bing.net/th?id=OIP.wXxeRcaNt-GaXhu0AaktdAHaEK&pid=Api&P=0&h=180');
+      background-size: cover;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      background: #04571e;
+      color: #fff;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    nav {
+      background-color: rgb(51, 49, 49);
+      padding: 10px 0;
+    }
+
+    nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      list-style-type: none;
+      padding: 0;
+    }
+
+    nav ul li {
+      margin: 10px 15px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: whitesmoke;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    nav ul li a:hover {
+      color: #2874f0;
+    }
+
+    .login-button {
+      background-color: #2874f0;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 4px;
+      text-decoration: none;
+    }
+
+    .search-bar {
+      text-align: center;
+      margin: 20px auto;
+      padding: 0 10px;
+    }
+
+    .search-bar input {
+      padding: 15px;
+      border: none;
+      width: 80%;
+      max-width: 500px;
+      border-radius: 30px;
+    }
+
+    .search-bar button {
+      padding: 10px 15px;
+      background-color: #fff;
+      color: #2874f0;
+      border: none;
+      cursor: pointer;
+      border-radius: 20px;
+      margin-left: 5px;
+    }
+
+    .a {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .product-card {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      padding: 20px;
+      width: 90%;
+      max-width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .product-card img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .product-card h3 {
+      font-size: 1.1rem;
+      margin: 10px 0;
+    }
+
+    .image {
+      text-align: center;
+      margin: 30px 10px;
+    }
+
+    .image img {
+      max-width: 95%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .filter-icon {
+      position: fixed;
+      top: 100px;
+      right: 10px;
+      font-size: 24px;
+      cursor: pointer;
+      z-index: 1100;
+      background: #fff;
+      border: 1px solid #3d3737;
+      border-radius: 4px;
+      padding: 5px;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #f1f3f6;
+      padding: 20px;
+      height: 100vh;
+      border-right: 1px solid #ddd;
+      position: fixed;
+      top: 0;
+      left: -250px;
+      transition: left 0.3s ease;
+      z-index: 1000;
+    }
+
+    .sidebar.open {
+      left: 0;
+    }
+
+    .filter-section {
+      margin-bottom: 30px;
+    }
+
+    .filter-section h4 {
+      margin-bottom: 10px;
+      color: #333;
+      font-size: 16px;
+    }
+
+    .filter-option {
+      margin: 5px 0;
+    }
+
+    .filter-option input {
+      margin-right: 8px;
+    }
+
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .search-bar input {
+        width: 90%;
+      }
+
+      .product-card {
+        width: 95%;
+      }
+
+      .filter-icon {
+        top: 80px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>&#xf07a; FLIPKART</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="clothes.html">Clothes</a></li>
+      <li><a href="grocery.html">Grocery</a></li>
+      <li><a href="footware.html">Footwear</a></li>
+      <li><a href="accessories.html">Accessories</a></li>
+      <li><a href="loginpage.html" class="login-button">Log in</a></li>
+    </ul>
+  </nav>
+
+  <div class="filter-icon" onclick="toggleSidebar()">&#9776;</div>
+
+  <div class="sidebar" id="sidebar">
+    <div class="filter-section">
+      <h4>Category</h4>
+      <div class="filter-option"><input type="checkbox" id="cat1"><label for="cat1">Dressing</label></div>
+      <div class="filter-option"><input type="checkbox" id="cat2"><label for="cat2">Grocery</label></div>
+      <div class="filter-option"><input type="checkbox" id="cat3"><label for="cat3">Foot wear</label></div>
+    </div>
+
+    <div class="filter-section">
+      <h4>Brand</h4>
+      <div class="filter-option"><input type="checkbox" id="brand1"><label for="brand1">US.POLO</label></div>
+      <div class="filter-option"><input type="checkbox" id="brand2"><label for="brand2">CROCS</label></div>
+      <div class="filter-option"><input type="checkbox" id="brand3"><label for="brand3">Nike</label></div>
+    </div>
+
+    <div class="filter-section">
+      <h4>Price</h4>
+      <div class="filter-option"><input type="radio" name="price" id="price1"><label for="price1">Under ₹1,000</label></div>
+      <div class="filter-option"><input type="radio" name="price" id="price2"><label for="price2">₹1,000 - ₹3,000</label></div>
+      <div class="filter-option"><input type="radio" name="price" id="price3"><label for="price3">Above ₹3,000</label></div>
+    </div>
+  </div>
+
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      sidebar.classList.toggle('open');
+    }
+  </script>
+
+  <div class="search-bar">
+    <input type="text" placeholder="Search for products, brands and more">
+    <button type="submit">Search</button>
+  </div>
+
+  <div class="a">
+    <div class="product-card">
+      <img src="https://images2.drct2u.com/repo/AWL/desktop/pages/homepage/standard/2023/week-51/02-images/Slot_1_R1_MB.jpg" alt="Women's Trend">
+      <h3>60% off on Women's Trend</h3>
+    </div>
+    <div class="product-card">
+      <img src="https://www.theoutnet.com/ycm/resource/blob/1262170/fb8f97f356e5b0cbe0877984aaccb8cc/mens-extra-40-off-cb-image-data.jpg?imwidth=800&improfile=isc" alt="Men's Fashion">
+      <h3>40% off Men's Fashion</h3>
+    </div>
+    <div class="product-card">
+      <img src="https://www.syioknya.com/custom/picture/72682/syioknyaThumbnail-64fe5427be07a.jpg" alt="Footwear Sale">
+      <h3>50% off on Footwear</h3>
+    </div>
+  </div>
+
+  <div class="image">
+    <img src="https://i.ytimg.com/vi/u9HMyq7PPbs/maxresdefault.jpg" alt="Banner">
+  </div>
+
+  <footer>
+    <p>&copy; 2024 My Website. All rights reserved.</p>
+  </footer>
+</body>
+</html>
